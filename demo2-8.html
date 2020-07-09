@@ -1,1 +1,37 @@
-ssssd
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id选择器权重最大，放在Elements的最上面 */
+        
+        #div {
+            background: blue;
+        }
+        /* class选择器权重比ID选择器小，但是比id选择器大，所以background会被覆盖 */
+        
+        .div {
+            font-size: 20px;
+            background: red;
+        }
+        /* 元素选择器权重最小，所以font-size和background会被覆盖 */
+        
+        div {
+            padding: 10px;
+            font-size: 14px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div" id="div">
+        Hello CSS
+    </div>
+</body>
+
+
+</html>
