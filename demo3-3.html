@@ -7,13 +7,37 @@
     <title>Document</title>
     <style>
         body {
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            /* 选择哪种字体 */
+            /* Consolas字体是WIndow10自带的字体，但是Consolas字体只能使用在英文上，使用可以看到浏览器为中文设置了默认字体 */
+            /* 这里需要注意的是，不是说浏览器只会在font-family中选择一个font，它会根据不同的语言和不同字体能够使用的语言进行自动fallback */
+            /* font-family: 'Consolas'; */
+            /* font-family: 'Consolas', 'SimSun'; */
+            /* font-family: 'aaaaa', 'SimSun'; */
+            font-family: 'aaaaa', 'Consolas';
         }
+        .chinese {
+            /* 字体名称使用引号，字体族不要使用引号 */
+            font-family: "Microsoft Yahei", serif;
+        }
+
+        /* 自定义字体 */
+        @font-face {
+            font-family: "IF";
+            /* 可以是网络字体，也可以是本地字体，这里使用本地字体，如果使用网络字体，一定要注意cors的问题 */
+            src: url('./self-define-font.otf');
+        }
+        .custom-font {
+            /* 使用自定义字体 */
+            font-family: IF;
+        }
+        /* 如何理解iconfont */
     </style>
 </head>
 
 <body>
     <div>Hello world 你好，世界</div>
+    <div class="chinese">你好</div>
+    <div class="custom-font">你好，世界 Hello world</div>
 </body>
 
 </html>
