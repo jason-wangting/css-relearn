@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表示区域的元素都是block元素 -->
+    <div style="width: 100px;background-color: red;">block 元素</div>
+    <!-- p标签也是block元素 -->
+    <p>
+        <!-- span标签是inline元素，inline元素不能设置size，并且当浏览器足够小时，inline元素会换行显示，inline元素是没有规定形状的。 -->
+        <span>inline元素</span>
+        <em>也是inline元素</em>
+        <strong>这个也是inline元素</strong>
+    </p>
+    <p>
+        <!-- select元素默认是inline-block元素，可以通过查看select元素的display属性看到，inline-block元素是可以与其他元素在一行的，像这里的与inline元素span在一行。 -->
+        <!-- 并且，select元素是可以设置size的，它是有规则形状的，它不会因为浏览器的太小而换行（inline元素会因为浏览器窗口太小而换行） -->
+        <select name="test" style="width: 400px;">
+            <option>inline block元素</option>
+        </select>
+        <span>inline元素</span>
+    </p>
+</body>
+</html>

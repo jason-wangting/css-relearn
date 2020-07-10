@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>链接</h1>
+        <a href="http://www.qq.com">腾讯</a>
+        <a href="http://www.taobao.com" target="_blank">淘宝</a>
+    </section>
+    <section>
+        <h1>表格</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>表头1</th>
+                    <th>表头2</th>
+                    <th>表头3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>数据1</td>
+                    <td>数据2</td>
+                    <td>数据3</td>
+                </tr>
+                <tr>
+                    <!-- 占据2列的单元格， colspan=2 -->
+                    <td colspan="2">数据1</td>
+                    <!-- 本来一行有3列数据的，现在被占据了一列， -->
+                    <td>数据3</td>
+                </tr>
+                <tr>
+                    <!-- 占据2行的单元格，rowspan=2 -->
+                    <td rowspan="2">数据1</td>
+                    <td>数据2</td>
+                    <td>数据3</td>
+                </tr>
+                <tr>
+                    <!-- 本来有3列数据，因为被上面的单元格占了一列，所以这里只有2列了 -->
+                    <td>数据2</td>
+                    <td>数据3</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h1>表单</h1>
+        <!-- action表示要提交的地址 -->
+        <!-- method表示提交的请求方式 -->
+        <!-- enctype表示编码方式，只有form-data可以提交file -->
+        <!-- 提交数据到后台有2中方式，一种是form表单提交，一种是ajax，但是，即使这里使用ajax，在写输入时尽量也要带上form元素 -->
+        <form action="http://www.qq.com" method="GET" enctype="multipart/form-data">
+            <p>
+                <!-- 下拉列表使用select和option结合 -->
+                <select name="select1" id="select1">
+                    <option value="1">one</option>
+                    <!-- option有selected属性时，表示选中状态 -->
+                    <option value="2" selected>two</option>
+                </select>
+            </p>
+            <p>
+                <input type="text" name="text1" />
+            </p>
+            <p>
+                <input type="password" name="password" />
+            </p>
+            <p>
+                <!-- input的type为radio时，表示单选框，name相同时只能选择一个（name都为radio1） -->
+                <!-- name可以相同，表示同一组单选框，只能选择一个，但是id不能相同 -->
+                <!-- label for为了扩大选择范围，容易选择 -->
+                <input type="radio" name="radio1" id="radio1-1" />
+                <label for="radio1-1">选择1</label>
+                <input type="radio" name="radio1" id="radio1-2" />
+                <label for="radio1-2">选择2</label>
+            </p>
+            <p>
+                <!-- 默认为普通button -->
+                <button type="button">普通button</button>
+                <!-- 当type of button is submit, 它就是一个提交button -->
+                <button type="submit">提交button</button>
+                <!-- 提交button也可以使用input,它的type是submit，注意这里的value，但是这里input的语义不明确，尽量不要使用 -->
+                <input type="button" value="提交button" />
+                <!-- 表单回到初始状态 -->
+                <button type="reset">重置button</button>
+            </p>
+        </form>
+    </section>
+</body>
+</html>

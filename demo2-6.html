@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- block元素包含inline元素是完全合法的 -->
+    <div><a href="#">Div &gt; A</a></div>
+    <!-- a元素包含block元素时，浏览器承认，但是w3c在检查html的合法性时会去掉a元素再去判断是否合法，所以这里是合法的 -->
+    <a href="#"><div>A &gt; DIV</div></a>
+    <!-- 这里，block元素p包含了inline元素a元素，a元素中又包含了block元素div元素，这时，w3c在分析时，会把包含block元素的a元素去掉，这样就变成了p元素包含div元素，所以，在分析合法性时（https://validator.w3.org/），这个html是不合法的，但是，浏览器还是可以显示的 -->
+    <p><a href="#"><div>P &gt; A &gt; DIV</div></a></p>
+</body>
+</html>

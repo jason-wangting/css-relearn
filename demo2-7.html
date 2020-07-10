@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- html元素是block元素，是有默认样式的，display=block,并且默认width是100%，height随着内容变化 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 浏览器默认给body元素添加了margin=8px，并且body元素也是block元素 -->
+<body>
+    <div>DIV元素</div>
+    <!-- ul元素默认有个padding=40px，所以没有和div元素左对齐 -->
+    <ul>
+        <!-- li元素默认带有一个小圆点，这是通过display：list-item来设置的，默认小圆点的位置是在li的外部，这是通过list-style-position的默认值outside设置的 -->
+        <li>LI元素</li>
+        <li>LI元素</li>
+    </ul>
+    <!-- padding为0时，小圆点就被覆盖了 -->
+    <ul style="padding: 0;">
+        <li>LI元素</li>
+        <li>LI元素</li>
+    </ul>
+    <!-- padding为0时，左边距没有了 -->
+    <ul style="padding: 0;">
+        <!-- 把list-style-position的值由没有值outside修改为inside， -->
+        <li style="list-style-position: inside;">LI元素</li>
+        <li style="list-style-position: inside;">LI元素</li>
+    </ul>
+</body>
+</html>
