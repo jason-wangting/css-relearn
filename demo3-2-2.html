@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 同样的权重后面覆盖前面，所以是blue */
+        
+        .test1 {
+            color: red;
+        }
+        
+        .test1 {
+            color: blue;
+        }
+        /* ！important的权重是最高的（css文件） ，所以是red */
+        
+        .test2 {
+            color: red !important;
+        }
+        
+        .test2 {
+            color: blue;
+        }
+        /* 虽然这里使用了id选择器，也加上了！important，但是大的前提是这个还是外部的css文件，内部的style元素属性是最高的，所以是blue */
+        
+        #test3 {
+            color: red ！important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test1">test1</div>
+    <div class="test2">test2</div>
+    <div id="test3" style="color: blue;">test3</div>
+</body>
+
+</html>
