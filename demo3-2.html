@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 权重计算是100 */
+        
+        #test1 {
+            color: red;
+        }
+        /* 权重计算是100+10=110 所以会覆盖权重比较小的样式，最后显示的是blue*/
+        
+        #test1.test1 {
+            color: blue;
+        }
+        /* 权重计算是10 */
+        
+        .test2 {
+            color: red;
+        }
+        /* 权重计算是1 + 10 = 11 所以会覆盖权重比较小的样式，最后显示的是blue */
+        
+        div.test2 {
+            color: blue;
+        }
+        /* 权重计算是100 */
+        
+        #test3 {
+            color: red;
+        }
+        /* 权重计算是10 × 11 = 110 注意，这里虽然比100高，但是权重的计算是不进位的，也就是说，这个110是 100 × 0 + 10 × 11，而上面的权重是 100 × 1，比较是先比较位的，所以上面的权重更大一些。所以显示red */
+        
+        .c1.c2.c3.c4.c5.c6.c7.c8.c9.c10.c11 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body class="body" id="body">
+    <div id="test1" class="test1">test1</div>
+    <div class="test2">test2</div>
+    <div id="test3" class="c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11">test3</div>
+</body>
+
+</html>
