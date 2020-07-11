@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>background</title>
+    <style>
+        /* body{
+            background:yellow;
+        } */
+        .c1{
+            height:90px;
+            /* 颜色的格式：可以使用 hsl对人眼更友好一点*/
+            /* 1. red white 直接使用单词 */
+            /* background: grey; */
+            /* 2. #FF0000 16进制数 */
+            /* background: #ff0000; */
+            /* 3. rgb(255, 0 ,0) */
+            /* background: rgb(240, 164, 0); */
+            /* 4. rgba(255, 0, 0, 0.3) 比rgb加了一个透明度 */
+            /* background: rgba(255, 0, 0, .1); */
+            /* 5. hsl(0色项, 100% 饱和度，50% 亮度)，色项是0-360 */
+            /* background: hsl(0, 10%, 50%); */
+            /* 6. hsla(0色项, 100% 饱和度，50% 亮度,0.1透明度)，色项是0-360 */
+            /* background:hsla(0, 100%, 90%, .3); */
+            
+            /* 背景还可以使用背景图 */
+            /* 可以看到默认是从左上角开始平铺的，并且还会重复平铺，可以通过设置来改变这个默认行为 */
+            background:url(./demo3-5-1.png);
+        }
+        .c2{
+            height:90px;
+            /* 背景颜色渐变，从什么颜色变到什么颜色，这是比较老的写法，使用了left，并且有-webkit */
+            /* background: -webkit-linear-gradient(left, red, green); */
+            /* 这个背景颜色渐变是最新的写法，没有了-webkit，并且有to right, 效果是一样的 */
+            /* background: linear-gradient(to right, red, green); */
+            /* 直接写to right, to left, to top的情况背景少，更多的是设置角度,角度指定是渐变的方向 */
+            /* 0deg默认从下to上的，也就是to top */
+            /* background: linear-gradient(to top, red, green); */
+            /* 还是让UXD给设计图吧 */
+            /* background: linear-gradient(135deg, red 0, green 10%, yellow 50%, blue 100%); */
+            /* 多个背景叠加 */
+            /* 可以使用background的渐变做出各种图形 */
+            background: linear-gradient(135deg, transparent 0, transparent 49.5%, green 49.5%, green 50.5%, transparent 50.5%, transparent 100%),
+                linear-gradient(45deg, transparent 0, transparent 49.5%, red 49.5%, red 50.5%, transparent 50.5%, transparent 100%);
+            /* background-size: 30px 30px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+
+    </div>
+    <div class="c2">
+
+    </div>
+</body>
+</html>
