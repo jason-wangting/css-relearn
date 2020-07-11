@@ -7,22 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>line-height</title>
     <style>
+        /* 这里的span元素没有设置line-height,所以span元素的高度决定了inline box的高度（span元素的高度不是inline box的高度，它是稍微加了一点，所以才会有base line与bottom line的区别），span元素的高度是由字体决定的。 */
+        /* 所以这个line box的高度是由cc3的字体24px决定的。 */
+        .c1 {
+            background-color: grey;
+        }
+        /* inline元素在一行中，默认是按照base line（元素自身的高度）对齐的。如果想要居中对齐，可以设置vertical-align为middle，就可以改变单独元素的对齐方式。 */
+        /* vertical-align可以设置px，默认是以baseline做调整的 */
+        /* base line是元素自身的高度的下面，bottom是inline-box的高度的下面，所以都会有空白的情况，只不过很小。 */
         .cc1 {
             font-size: 12px;
+            vertical-align: baseline; /* 默认是base line */
+            vertical-align: middle; /* 设置为middle可以实现居中对齐 */
         }
         
         .cc2 {
             font-size: 18px;
+            vertical-align: baseline; /* 默认是base line */
+            vertical-align: middle; /* 设置为middle可以实现居中对齐 */
         }
         
         .cc3 {
             font-size: 24px;
+            vertical-align: baseline; /* 默认是base line */
+            vertical-align: middle; /* 设置为middle可以实现居中对齐 */
         }
     </style>
 </head>
 
 <body>
     <div style="border:solid 1px red;">
+        <!-- 背景的bule是根据span元素自身的高度渲染的，span元素是个inline元素，它的高度由字体大小决定，所以blue渲染了20px -->
+        <!-- 另外，line-height是60px，比span元素本身的高度要高，所以多于的40px会等分在span元素的上下。 -->
+        <!-- 如果这时候包含span元素的div没有设置height，那么div的height就由span的inline-box的高度决定，也就是60px，也就形成了垂直居中的样子 -->
+        <!-- 要想使用line-height的方式实现垂直居中，父级元素不能设置height -->
         <span style="background:blue;color:#fff;font-size:20px;line-height:60px;">
             居中xfg&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         </span></div>
@@ -33,15 +51,11 @@
     </div>
     <div style="background:red">
         <span>文字</span>
+        <!-- 这里的img（inline block元素，默认是按照inline排布的，inline排布是默认基于baseline对齐的）在下面有一个空白，这是因为img元素自身的高度是由图片决定的，inline box的高度会在自身高度上加一点 -->
+        <!-- 默认情况下，元素是按照base line也就是自身高度的底线对齐的，所以就看起来有空白了。 -->
+        <!-- 如果想去掉这个空白，可以把img图片的对齐方式改为vertical-align 为 bottom -->
         <img src="./demo3-4-2.png" />
-    </div>
-    <div>
-        <div style="float:left">
-            <span>第一段</span>
-        </div>
-        <div style="float:left">
-            <span>第二段</span>
-        </div>
+        <!-- 还有另外一种去掉空白的方式，默认img是按照inline排布，只有inline排布才有vertical-align,才有inline-box决定line-box的说法，如果我们把img的display改为block也就不会有空隙的问题了。 -->
     </div>
 </body>
 

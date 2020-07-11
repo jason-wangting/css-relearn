@@ -10,7 +10,11 @@
         span {
             background: red;
         }
-        
+        /* 行高不决定元素本身的高度 */
+        /* 这里的span元素的高度是由字体的大小决定的，所以这里的span元素的height是17px */
+        /* 但是行高决定了包含元素的父级元素的高度，所以看到包含span元素的div的高度是30px，是由最大的c3的line-height决定的。 */
+        /* 另外，如果界面比较小，可以看到div的高度会变化，如果包含了2行，那么是由每一行的line-height最大的相加决定的 */
+        /* 如果父级加了height，那么父级的height就不由内部元素的line-height决定了 */
         .c1 {
             line-height: 20px;
         }
