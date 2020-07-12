@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .left{
+            background:red;
+            /* table布局中的元素默认等分width及height，如果需要设置不同的size,可以直接使用width单独设置，这样会自动布局 */
+            /* width: 20%; */
+        }
+        .right{
+            background:blue;
+        }
+        table{
+            width:800px;
+            height:200px;
+            /* border-collapse属性设置表格的边框是否被合并为一个单一的边框，还是像在标准的HTML中那样分开显示 */
+            /* separate：默认值，边框会分开 */
+            /* collapse: 如果可能，边框会合并为单一的边框 */
+            border-collapse: collapse;
+        }
+        .table{
+            margin-top:20px;
+            /* 设置其他元素为table元素，这样就可以在其他元素中使用table布局了。 */
+            display: table;
+            width:800px;
+            height:200px;
+        }
+        .table-row{
+            display: table-row;
+        }
+        .table-cell{
+            /* middle 当前元素放置在父元素的中部， */
+            /* vertical-align: middle; */
+            display: table-cell;
+        }
+    </style>
+</head>
+<body>
+    <!-- table自身带的属性比如左右上下对齐，文字居中显示，使用table布局对于规范的布局很方便 -->
+    <table>
+        <tr>
+            <td class="left">左</td>
+            <td class="right">右</td>
+        </tr>
+    </table>
+    <div class="table">
+        <div class="table-row">
+            <div class="left table-cell">
+                左
+            </div>
+            <div class="right table-cell">
+                右
+            </div>
+        </div>
+    </div>
+</body>
+</html>

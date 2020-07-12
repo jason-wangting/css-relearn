@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            height: 100px;
+            background: grey;
+        }
+        .c1 {
+            width: 100px;
+            background: red;
+        }
+        .c2 {
+            /* margin表示该元素距离其他元素有多远，margin-left 20px表示距离左边元素20px */
+            margin-left: 20px;
+            /* 计算盒子模型占用空间的大小要加上padding和border */
+            padding: 20px;
+            border: 5px solid black; 
+            /* 直接作用在元素上的height和width是内容的size，内容的size不是整个元素所占用的空间（也就是盒子模型的size），它还要加上border和padding */
+            height: 20px;
+            width: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="c1">left</div>
+        <div class="c2">right</div>
+    </div>
+</body>
+</html>

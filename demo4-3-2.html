@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* block元素默认是占据一行的，可以设置它的size */
+        .block{
+            height:200px;
+            background:red;
+
+        }
+        /* inline元素默认是可以与其他元素在同一行中，不可以设置它的size */
+        .inline{
+            display: inline;
+            background: green;
+            /* 为什么单独设置inline元素的vertical-align达不到居中对齐的效果，要想居中对齐只能在inline-block元素上加上vertical-align=middle */
+            /* vertical-align: middle; */
+        }
+        /* inline-block元素集inline元素与block元素的特点于一身，它及可以与其他元素在一行中，又可以设置size */
+        /* inline元素及inline-block元素在一行时，可以使用vertical-align来修改对齐方式 */
+        .inline-block{
+            display: inline-block;
+            width:200px;
+            height:100px;
+            background:blue;
+            /* 设置元素居中对齐 */
+            /* vertical-align: middle; */
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        block
+    </div>
+    <div class="inline">inline</div>
+    <div class="inline">inline</div>
+    <div class="inline-block">inline-block</div>
+</body>
+</html>
