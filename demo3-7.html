@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            background-color: red;
+            height: 200px;
+            margin-right: 50px;
+        }
+        section {
+            font-size: 30px;
+            width: 200px;
+        }
+        /* 滚动条隐藏 */
+        /* 容器大小不变，内容会跑出去 */
+        .c1 {
+            overflow: visible;
+        }
+        /* 滚动条隐藏 */
+        .c2 {
+            overflow: hidden;
+        }
+        /* 滚动条显示 */
+        /* 就算内容没有超过容器，滚动条依然显示 */
+        .c3 {
+            overflow: scroll;
+        }
+        /* 滚动条自动显示 */
+        /* 内容没有超过容器时，滚动条不会显示 */
+        .c4 {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body style="display: flex;">
+    <div class="c1">
+        <section>overflow: visible</section>
+        <p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p>
+    </div>
+    <div class="c2">
+        <section>overflow: hidden</section>
+        <p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p>
+    </div>
+    <div class="c3">
+        <section>overflow: scroll</section>
+        <h1>scroll</h1>
+        <p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p>
+    </div>
+    <div class="c4">
+        <section>overflow: auto</section>
+        <h1>auto</h1>
+        <p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p><p>段落</p>
+    </div>
+    <div class="c3">
+        scroll
+        <p>段落</p>
+    </div>
+    <div class="c4">
+        auto
+        <p>段落</p>
+    </div>
+</body>
+</html>
